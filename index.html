@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="부처별 보도자료를 한곳에서 검색하고 열람하는 보도자료 모아보기">
+  <title>보도자료 모아보기</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="데이터.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><div class="container brand"><span class="brand-icon" aria-hidden="true">▤</span> 보도자료 모아보기 <span class="edition">PRESS ARCHIVE</span></div></header>
+  <main class="container">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">부처별 소식, 한곳에서</p>
+      <h1 id="page-title">필요한 보도자료를<br>빠르게 찾아보세요.</h1>
+      <p class="description">여러 부처의 발표 내용을 검색하고, 원문을 확인하세요.</p>
+      <div class="search-wrap"><label for="search">보도자료 검색</label><div class="search-box"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="제목, 본문, 부처명으로 검색" autocomplete="off"><button id="clear-search" type="button" hidden>지우기</button><kbd aria-hidden="true">/</kbd></div></div>
+    </section>
+    <section class="archive" aria-labelledby="results-heading">
+      <div class="archive-heading"><h2 id="results-heading">전체 보도자료 <span id="result-count" role="status" aria-live="polite" aria-atomic="true"></span></h2><span class="archive-note">제공된 원문 기준</span></div>
+      <div id="departments" class="filters" role="group" aria-label="부처별 필터"></div>
+      <div id="cards" class="cards"></div>
+      <div id="empty-state" class="empty" hidden><span aria-hidden="true">⌕</span><h3>검색 결과가 없습니다</h3><p>다른 검색어를 입력하거나 부처 필터를 변경해 보세요.</p><button id="reset" class="reset-button" type="button">전체 자료 보기</button></div>
+      <noscript><p>보도자료를 검색하고 열람하려면 JavaScript를 활성화해 주세요.</p></noscript>
+    </section>
+    <aside class="notice"><strong>자료 안내</strong><p>첨부된 가상 보도자료 3종을 바탕으로 구성한 페이지입니다. 부처별 발표 내용과 수치는 원문 그대로 제공됩니다.</p></aside>
+  </main>
+  <footer class="container footer"><span>보도자료 모아보기</span><span>공개 자료를 더 쉽게, 더 가까이.</span></footer>
+  <dialog id="detail" aria-labelledby="detail-title"><div class="dialog-top"><span id="detail-department" class="badge"></span><button id="close-detail" type="button" aria-label="전문 닫기">닫기 ✕</button></div><h2 id="detail-title"></h2><div id="detail-body"></div><p class="detail-note">가상 보도자료 · 제공된 원문</p></dialog>
+</body>
+</html>
